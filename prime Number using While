@@ -1,0 +1,25 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    int n,m; cin>>n>>m;
+    bool present = false;
+    while(n<=m){
+    bool isPrime = true;
+        int c=2;
+        while(c*c<=n){
+            if(n%c==0){
+                isPrime = false;
+                break;
+            }
+                c++;
+        }
+        if(isPrime) {cout<<n<<" "; present = true;}
+        n++;
+    }
+    if(!present) cout<<-1;
+
+    return 0;
+}

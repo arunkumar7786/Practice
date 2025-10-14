@@ -1,0 +1,28 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n,m;
+    cin>>n>>m;
+    vector<int>arr;
+    for(int i=n; i<=m; i++){
+        bool flag = true;
+        for(int j=2; j<=i/2; j++){
+            if(i%j==0){
+                flag = false;
+                break;
+            }
+        }
+        if(flag && i!=1) arr.push_back(i);
+        
+    }
+    if(empty(arr)) cout<<-1;
+    for(int i:arr){
+        cout<<i<<" ";
+    }
+    
+
+    return 0;
+}

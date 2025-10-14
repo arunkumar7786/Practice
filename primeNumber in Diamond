@@ -1,0 +1,52 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int>arr;
+    for(int i=2; i<100; i++){
+        int c = 2;
+        while(c*c<=i){
+            if(i%c==0){
+                break;
+            }
+                c++;
+        }
+        if(c*c>i)arr.push_back(i);
+    }
+    int n;
+    cin>>n;
+    int idx = 0;
+    for(int i=0; i<n; i++){
+        for(int j=n-i-1; j>0; j--){
+                cout<<"   ";
+        }
+        for(int j=0; j<=i; j++){
+            if(arr[idx]<10){
+                cout<<arr[idx++]<<"   ";
+            }else cout<<arr[idx++]<<" ";
+        }
+        for(int j=0; j<i; j++){
+            if(arr[idx]<10){
+                cout<<arr[idx++]<<"   ";
+            }else cout<<arr[idx++]<<" ";
+        }
+        cout<<endl;
+    }
+    for(int i=0; i<n-1; i++){
+        for(int j=0; j<=i; j++){
+            cout<<"   ";
+        }
+        for(int j=n-i-1; j>0; j--){
+            cout<<arr[idx++]<<" ";
+        }
+        for(int j=n-i-2; j>0; j--){
+            cout<<arr[idx++]<<" ";
+        }
+        cout<<endl;
+    }
+    
+
+    return 0;
+}
